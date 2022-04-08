@@ -4,7 +4,7 @@
 Create a custom compass from a widget.
 
 ## Usage
-
+```
 late final magnetometerRepo = MagnetometerRepository();
 
 Degrees(
@@ -20,3 +20,4 @@ Compass(
     size: 50,
     ),
 ),
+```

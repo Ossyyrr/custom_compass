@@ -1,6 +1,6 @@
 name: custom_compass
-description: A new Flutter package project.
-version: 0.0.1
+description: Create a custom compass from a widget.
+version: 0.1.0
 homepage: 'https://github.com/Ossyyrr/Compass'
 
 environment:

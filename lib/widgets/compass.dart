@@ -1,4 +1,4 @@
-import 'package:compass/helpers/repos/magnetometer.dart';
+import 'package:custom_compass/repos/magnetometer.dart';
 import 'package:flutter/material.dart';
 
 class Compass extends StatelessWidget {
@@ -6,10 +6,17 @@ class Compass extends StatelessWidget {
     Key? key,
     required this.magnetometerRepo,
     required this.child,
+    this.extraRotation = 0.0,
   }) : super(key: key);
 
+  /// instance of a MagnetometerRepository
   final MagnetometerRepository magnetometerRepo;
+
+  /// Widget
   final Widget child;
+
+  /// extra degrees of rotation to snap an image or widget to north
+  final double extraRotation;
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +29,9 @@ class Compass extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Transform.rotate(
-                  angle: data / 57.295779513,
+                  angle: (extraRotation + data) / 57.295779513,
                   child: child,
                 ),
-                // Transform.rotate(
-                //   angle: (az) / 57.295779513,
-                //   child: const Icon(Icons.compass_calibration),
-                // ),
-                // Transform.rotate(
-                //   angle: (az) / 57.295779513,
-                //   child: const Icon(Icons.arrow_circle_up),
-                // ),
-                // Transform.rotate(
-                //   angle: (az) / 57.295779513,
-                //   child: const Icon(Icons.arrow_upward_outlined),
-                // ),
               ],
             ),
           );

@@ -1,7 +1,5 @@
 library custom_compass;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'repos/magnetometer.dart';
+export 'widgets/compass.dart';
+export 'widgets/degress.dart';
